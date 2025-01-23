@@ -12,6 +12,11 @@ export interface PortofolioConfigProject {
   }
 }
 
+export interface PortofolioConfigSkills {
+  category: string
+  items: [string, number, string][] // [name, year, icon]
+}
+
 export const getPortofolioConfig = (key: string) => {
   const AppPortofolioConfig = {
     author: {
@@ -20,6 +25,10 @@ export const getPortofolioConfig = (key: string) => {
       links: {
         github: 'https://github.com/viandwi24',
         linkedin: 'https://www.linkedin.com/in/viandwi24/',
+        email: 'mailto:viandwi24@pm.me',
+        linktree: 'https://linktr.ee/viandwi24',
+        facebook: 'https://www.facebook.com/viandwi24',
+        instagram: 'https://www.instagram.com/viandwi_24/',
       }
     },
     layout: {
@@ -46,15 +55,61 @@ export const getPortofolioConfig = (key: string) => {
             size: 'lg',
             icon: 'ph:github-logo',
             href: '{{author.links.github}}',
+            target: "_blank",
           },
           {
             label: 'About Me',
             variant: 'soft',
             size: 'lg',
-            // icon: 'ph:envelope-simple-duotone',
             'trailing-icon': 'ph:arrow-right-duotone',
             to: '/about',
           }
+        ]
+      },
+      contact: {
+        links: [
+          {
+            label: 'Email',
+            icon: 'ph:envelope-simple-duotone',
+            href: '{{author.links.email}}',
+            variant: 'outline',
+            color: 'warning',
+          },
+          {
+            label: 'Github',
+            icon: 'ph:github-logo',
+            href: '{{author.links.github}}',
+            variant: 'outline',
+            color: 'neutral',
+          },
+          {
+            label: 'Linkedin',
+            icon: 'ph:linkedin-logo',
+            href: '{{author.links.linkedin}}',
+            variant: 'outline',
+            color: 'primary',
+          },
+          {
+            label: 'Linktree',
+            icon: 'ph:link',
+            href: '{{author.links.linktree}}',
+            variant: 'outline',
+            color: 'success',
+          },
+          {
+            label: 'Facebook',
+            icon: 'ph:facebook-logo',
+            href: '{{author.links.facebook}}',
+            variant: 'outline',
+            color: 'primary',
+          },
+          {
+            label: 'Instagram',
+            icon: 'ph:instagram-logo',
+            href: '{{author.links.instagram}}',
+            variant: 'outline',
+            color: 'error',
+          },
         ]
       }
     },
@@ -506,6 +561,104 @@ export const getPortofolioConfig = (key: string) => {
         }
       }
     ] as PortofolioConfigProject[],
+    skills: [
+      {
+        category: 'Programming Languages',
+        items: [
+          ['Html', 2014, 'https://seeklogo.com/images/H/html5-without-wordmark-color-logo-14D252D878-seeklogo.com.png'],
+          ['Css', 2014, 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/48px-CSS3_logo.svg.png'],
+          ['JavaScript', 2014, 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png'],
+          ['VB6', 2015, 'https://www.vectorlogo.zone/logos/microsoft_vb/microsoft_vb-icon.svg'],
+          ['.NET', 2016, 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_.NET_logo.svg'],
+          ['PHP', 2017, 'https://www.vectorlogo.zone/logos/php/php-icon.svg'],
+          ['Java', 2018, 'https://www.vectorlogo.zone/logos/java/java-icon.svg'],
+          ['C++', 2018, 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/306px-ISO_C%2B%2B_Logo.svg.png'],
+          ['C#', 2018, 'https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png?20180210215736'],
+          ['Typescript', 2019, 'https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg'],
+          ['SASS', 2019, 'https://www.vectorlogo.zone/logos/sass-lang/sass-lang-icon.svg'],
+          ['Python', 2019, 'https://www.vectorlogo.zone/logos/python/python-icon.svg'],
+          ['Golang', 2022, 'https://www.vectorlogo.zone/logos/golang/golang-icon.svg'],
+          ['Rust', 2023, 'https://www.vectorlogo.zone/logos/rust-lang/rust-lang-icon.svg'],
+        ]
+      },
+      {
+        category: 'Frameworks',
+        items: [
+          ['Codeigniter', 2017, 'https://codeigniter.com/assets/icons/44521256.png'],
+          ['Bootstrap', 2017, 'https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-icon.svg'],
+          ['JQuery', 2017, 'https://www.vectorlogo.zone/logos/jquery/jquery-icon.svg'],
+          ['Laravel', 2018, 'https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg'],
+          ['Unity', 2018, 'https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg'],
+          ['Semantic UI', 2018, 'https://seeklogo.com/images/S/semantic-ui-logo-AFDC4C7E31-seeklogo.com.png'],
+          ['Vue', 2019, 'https://www.vectorlogo.zone/logos/vuejs/vuejs-icon.svg'],
+          ['Nuxt', 2019, 'https://www.vectorlogo.zone/logos/nuxtjs/nuxtjs-icon.svg'],
+          ['Tailwind', 2019, 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg'],
+          ['Flutter', 2019, 'https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg'],
+          ['Phaser', 2020, 'https://www.vectorlogo.zone/logos/phaserio/phaserio-icon.svg'],
+          ['Flask', 2021, 'https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg'],
+          ['Express', 2021, 'https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg'],
+          ['React', 2021, 'https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg'],
+          ['GraphQL', 2021, 'https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg'],
+          ['Next', 2023, 'https://static-00.iconduck.com/assets.00/nextjs-icon-512x512-y563b8iq.png'],
+        ]
+      },
+      {
+        category: 'Tools & Runtime',
+        items: [
+          ['Nodejs', 2019, 'https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg'],
+          ['Deno', 2020, 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Deno_2021.svg/512px-Deno_2021.svg.png'],
+          ['Bun', 2023, 'https://bun.sh/logo.svg'],
+        ]
+      },
+      {
+        category: 'DevOps',
+        items: [
+          ['Docker', 2020, 'https://www.vectorlogo.zone/logos/docker/docker-icon.svg'],
+          ['PM2', 2020, 'https://www.vectorlogo.zone/logos/pm2io/pm2io-icon.svg'],
+          ['GAction', 2021, 'https://www.vectorlogo.zone/logos/github/github-icon.svg'],
+          ['Kubernetes', 2023, 'https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg'],
+          ['Terraform', 2023, 'https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg'],
+          ['Jenkins', 2024, 'https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg'],
+        ]
+      },
+      {
+        category: 'Database',
+        items: [
+          ['Mysql', 2017, 'https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg'],
+          ['Postgresql', 2018, 'https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg'],
+          ['Firebase', 2019, 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg'],
+          ['Mongodb', 2020, 'https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg'],
+          ['Redis', 2020, 'https://www.vectorlogo.zone/logos/redis/redis-icon.svg'],
+          ['Sqlite', 2021, 'https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg'],
+        ]
+      },
+      {
+        category: 'Cloud',
+        items: [
+          ['AWS', 2020, 'https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg'],
+          ['GCP', 2021, 'https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg'],
+        ]
+      },
+      {
+        category: 'Serverless',
+        items: [
+          ['Heroku', 2019, 'https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg'],
+          ['Netlify', 2019, 'https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg'],
+          ['Vercel', 2020, 'https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg'],
+          ['Dokploy', 2024, 'https://avatars.githubusercontent.com/u/156882017?s=200&v=4']
+        ]
+      },
+      {
+        category: 'Operating System',
+        items: [
+          ['Windows', 2010, 'https://www.vectorlogo.zone/logos/microsoft/microsoft-icon.svg'],
+          ['Ubuntu', 2017, 'https://www.vectorlogo.zone/logos/ubuntu/ubuntu-icon.svg'],
+          ['Debian', 2018, 'https://www.vectorlogo.zone/logos/debian/debian-icon.svg'],
+          ['CentOS', 2020, 'https://www.vectorlogo.zone/logos/centos/centos-icon.svg'],
+          ['MacOS', 2020, 'https://www.vectorlogo.zone/logos/apple/apple-icon.svg'],
+        ]
+      },
+    ] as PortofolioConfigSkills[]
   }
 
   try {

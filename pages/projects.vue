@@ -45,7 +45,7 @@ const projects: PortofolioConfigProject[] = getPortofolioConfig('projects')
         </div>
         <div class="px-4 py-2 flex flex-col flex-1">
           <div class="font-bold text-xl">{{ project.name }}</div>
-          <div class="mt-1 flex gap-1.5">
+          <div class="mt-1">
             <span
               v-for="(tag, i) in project.tags"
               :key="i"
@@ -63,6 +63,7 @@ const projects: PortofolioConfigProject[] = getPortofolioConfig('projects')
                 variant="ghost"
                 icon="ph:code-duotone"
                 color="warning"
+                target="_blank"
                 :href="project.links.repository"
               />
             </UTooltip>
@@ -70,6 +71,7 @@ const projects: PortofolioConfigProject[] = getPortofolioConfig('projects')
               <UButton
                 variant="ghost"
                 icon="ph:arrow-square-out-duotone"
+                target="_blank"
                 :href="project.links.preview"
               />
             </UTooltip>

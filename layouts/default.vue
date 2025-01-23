@@ -43,7 +43,7 @@ const checkRouteActive = (item: [string, string]) => {
             <UButton
               label="Say Hello"
               variant="subtle"
-              to="/about"
+              to="/contact"
               icon="ph:mailbox-duotone"
             />
           </div>
