@@ -10,9 +10,10 @@ const isLoading = ref(true);
 const mount = async () => {
   isLoading.value = true;
   if (!canvas.value) return;
-  const app = new Application(canvas.value);
+  const _app = new Application(canvas.value);
   // await app.load('https://prod.spline.design/F6wOrERSghbRffLp/scene.splinecode');
-  await app.load('/assets/spline/room.splinecode');
+  await _app.load('/assets/spline/room.splinecode');
+  app.value = _app;
   isLoading.value = false;
 }
 

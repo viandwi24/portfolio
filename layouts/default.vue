@@ -18,9 +18,9 @@ const checkRouteActive = (item: [string, string]) => {
       <Container class="flex items-center justify-between h-full relative">
         <div class="flex items-center w-[500px]">
           <NuxtLink to="/" class="text-3xl font-bold text-white">
-            <span>{{ getPortofolioConfig('layout.navbar.brand.main') }}</span>
-            <span class="iandwi animate-fade-out">{{ getPortofolioConfig('layout.navbar.brand.secondary') }}</span>
-            <span class="text-primary-500">{{ getPortofolioConfig('layout.navbar.brand.tertiary') }}</span>
+            <span>{{ getPortfolioConfig('layout.navbar.brand.main') }}</span>
+            <span class="iandwi animate-fade-out">{{ getPortfolioConfig('layout.navbar.brand.secondary') }}</span>
+            <span class="text-primary-500">{{ getPortfolioConfig('layout.navbar.brand.tertiary') }}</span>
             <span class="ml-1 inline-block w-1.5 h-1.5 bg-gray-400" />
           </NuxtLink>
         </div>

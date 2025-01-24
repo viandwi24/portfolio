@@ -10,7 +10,7 @@
       </div>
       <div class="flex flex-col lg:flex-row gap-4 w-full lg:w-auto justify-center">
         <UButton
-          v-for="(button, i) in getPortofolioConfig('section.contact.links')"
+          v-for="(button, i) in getPortfolioConfig('section.contact.links')"
           :key="i"
           size="xl"
           target="_blank"

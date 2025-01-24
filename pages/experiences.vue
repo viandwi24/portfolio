@@ -1,10 +1,19 @@
 <script lang="ts" setup>
 useSeoMeta({
-  title: getPortofolioConfig('seo.projects.title'),
+  title: getPortfolioConfig('seo.projects.title'),
 })
 
-const skills: PortofolioConfigSkills[] = getPortofolioConfig('skills')
+const skills: PortfolioConfigSkills[] = getPortfolioConfig('skills')
 const skillsSearch = ref('')
+
+const skillsFiltered = computed(() => {
+  return skills.map((skill) => {
+    return {
+      category: skill.category,
+      items: skill.items.filter((tech) => tech[0].toLowerCase().includes(skillsSearch.value.toLowerCase()))
+    }
+  })
+})
 </script>
 
 <template>
@@ -26,15 +35,26 @@ const skillsSearch = ref('')
             Skills
           </h1>
         </div>
+        <div class="mt-4 relative w-[300px]">
+          <UInput
+            class="w-full"
+            placeholder="Search something..."
+            v-model="skillsSearch"
+          />
+          <UIcon
+            name="ph:magnifying-glass-duotone"
+            class="absolute right-2 top-2 text-gray-400"
+          />
+        </div>
       </div>
       <div
         class="flex flex-col gap-8 mt-6"
       >
-        <div v-for="(item, i) in skills" :key="i">
+        <div v-for="(item, i) in skillsFiltered" :key="i">
           <div class="pb-4">
             <div class="text-xl flex items-center gap-1 font-semibold border-b border-gray-500/30 pb-2">
               <UIcon name="ph:hash-straight-duotone" />
-              <h2>Shortcuts</h2>
+              <h2>{{ item.category }}</h2>
             </div>
           </div>
           <div

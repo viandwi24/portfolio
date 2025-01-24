@@ -1,4 +1,6 @@
-export interface PortofolioConfigProject {
+import merge from 'lodash.merge'
+
+export interface PortfolioConfigProject {
   name: string
   type: string
   description: string
@@ -12,13 +14,14 @@ export interface PortofolioConfigProject {
   }
 }
 
-export interface PortofolioConfigSkills {
+export interface PortfolioConfigSkills {
   category: string
   items: [string, number, string][] // [name, year, icon]
 }
 
-export const getPortofolioConfig = (key: string) => {
-  const AppPortofolioConfig = {
+export const getPortfolioConfig = (key: string) => {
+  const $config = useAppConfig()
+  const DefaultPortfolioConfig = {
     author: {
       username: 'viandwi24',
       name: 'Alfian Dwi Nugraha',
@@ -52,15 +55,25 @@ export const getPortofolioConfig = (key: string) => {
           {
             label: 'Github',
             variant: 'soft',
-            size: 'lg',
+            size: 'xl',
             icon: 'ph:github-logo',
             href: '{{author.links.github}}',
             target: "_blank",
+            color: 'neutral',
+          },
+          {
+            label: 'Resume',
+            variant: 'soft',
+            size: 'xl',
+            icon: 'ph:file-text-duotone',
+            href: 'https://drive.google',
+            target: "_blank",
+            color: 'warning',
           },
           {
             label: 'About Me',
             variant: 'soft',
-            size: 'lg',
+            size: 'xl',
             'trailing-icon': 'ph:arrow-right-duotone',
             to: '/about',
           }
@@ -126,7 +139,7 @@ export const getPortofolioConfig = (key: string) => {
         "name": "Nuxt 3 Awesome Starter",
         "type": "Template",
         "description": "a Nuxt 3 starter template or boilerplate with a lot of useful features. and integrated with TailwindCSS 3",
-        "tags": ["Nuxt", "Vue", "Tailwind CSS"],
+        "tags": ["Bun", "Typescript", "Nuxt", "Vue", "Tailwindcss"],
         "skills": [],
         "image": "/assets/images/projects/1.png",
         "year": "2022",
@@ -135,432 +148,7 @@ export const getPortofolioConfig = (key: string) => {
           "repository": "https://nuxt3-awesome-starter.vercel.app"
         }
       },
-      {
-        "name": "Blockchain Simulator",
-        "type": "Simulator",
-        "description": "A Simple Blockchain Simulation with Javascript Nodejs and VueJs as Front End",
-        "tags": ["Blockchain", "Simulation", "Nuxt", "Vue", "Tailwind CSS"],
-        "skills": [],
-        "image": "/assets/images/projects/2.gif",
-        "year": "2021",
-        "links": {
-          "preview": "https://github.com/viandwi24/blockchain-simulation",
-          "repository": "https://viandwi24.github.io/blockchain-simulation"
-        }
-      },
-      {
-        "name": "Devover Forum",
-        "type": "Forum",
-        "description": "a Opensource Forum Web with Tailwinds and Laravel",
-        "tags": ["Laravel", "Vue", "Tailwind CSS"],
-        "skills": [],
-        "image": "/assets/images/projects/3.gif",
-        "year": "2020",
-        "links": {
-          "preview": "https://github.com/devoverid/forum",
-          "repository": "https://github.com/devoverid/forum"
-        }
-      },
-      {
-        "name": "Klasse IO",
-        "type": "Game",
-        "description": "A group video call with a mix of rpg games. Make the group atmosphere more interactive. WebRTC based Video Stream with Peer connection. Then Signaling by WebSocket. With Client Built on NuxtJS as well as NodeJS server.",
-        "tags": ["Nuxt", "Vue", "WebRTC"],
-        "skills": [],
-        "image": "/assets/images/projects/4.png",
-        "year": "2021",
-        "links": {
-          "preview": "https://github.com/viandwi24/klasse-io-client",
-          "repository": "https://github.com/viandwi24/klasse-io-client"
-        }
-      },
-      {
-        "name": "Nokiamon",
-        "type": "Information",
-        "description": "a dex for digital collectible in solana blockchain",
-        "tags": ["React", "Express", "MongoDB", "GraphQL", "Web3"],
-        "skills": [],
-        "image": "/assets/images/projects/16.png",
-        "year": "2019",
-        "links": {
-          "preview": "https://nokiamon.com/",
-          "repository": "https://nokiamon.com/"
-        }
-      },
-      {
-        "name": "Hatofit",
-        "type": "Sport",
-        "description": "Hatofit is a platform that helps you to be fit and healthy, help you to track and monitoring your health.",
-        "tags": ["Nuxt", "MongoDB", "Express", "NodeJS", "PostgreSQL", "Flutter"],
-        "skills": [],
-        "image": "/assets/images/projects/23.jpeg",
-        "year": "2024",
-        "links": {
-          "preview": null,
-          "repository": null
-        }
-      },
-      {
-        "name": "Porseni MA 2023",
-        "type": "Information",
-        "description": "a information web app for register pekan olahraga dan seni jawa timur 2023",
-        "tags": ["NextJS"],
-        "skills": [],
-        "image": "/assets/images/projects/25.jpeg",
-        "year": "2023",
-        "links": {
-          "preview": null,
-          "repository": null
-        }
-      },
-      {
-        "name": "Web3 Blog",
-        "type": "Blog",
-        "description": "a decentral blog made using nuxt and solana with web3 concept",
-        "tags": ["Nuxt", "Web3"],
-        "skills": [],
-        "image": "/assets/images/projects/24.png",
-        "year": "2024",
-        "links": {
-          "preview": "https://github.com/viandwi24/nuxt3-blog-web3-solana",
-          "repository": "https://nuxt3-blog-web3-solana-client.vercel.app"
-        }
-      },
-      {
-        "name": "LSP SMKN 1 Mojokerto",
-        "type": "School",
-        "description": "a information web app for LSP SMKN 1 Mojokerto",
-        "tags": ["Nuxt", "Laravel"],
-        "skills": [],
-        "image": "/assets/images/projects/15.png",
-        "year": "2019",
-        "links": {
-          "preview": null,
-          "repository": null
-        }
-      },
-      {
-        "name": "E-Point School",
-        "type": "School",
-        "description": "a system information to manage achievement points and violations in school",
-        "tags": ["Laravel"],
-        "skills": [],
-        "image": "/assets/images/projects/22.png",
-        "year": "2024",
-        "links": {
-          "preview": null,
-          "repository": null
-        }
-      },
-      {
-        "name": "Bot Feeds",
-        "type": "Automation",
-        "description": "A apps to automate feeds and send to bot",
-        "tags": ["Bun", "Bot", "Automation"],
-        "skills": [],
-        "image": "/assets/images/projects/19.png",
-        "year": 2024
-      },
-      {
-        "name": "Bootsarc",
-        "type": "Template",
-        "description": "BOOTSARC is a Modern Design Administration Template. Based on Bootstrap 5 and Other Libraries. Free and Open Source Project Made with Love.",
-        "tags": ["Bootstrap", "Gulp", "Bower"],
-        "skills": [],
-        "image": "/assets/images/projects/6.gif",
-        "year": "2021",
-        "links": {
-          "preview": "https://github.com/viandwi24/bootsarc",
-          "repository": "https://bootsarc.vercel.app/pages/index.html"
-        }
-      },
-      {
-        "name": "Foody",
-        "type": "Services",
-        "description": "a client web app for Foody, a food ordering app based on Nuxt 3.",
-        "tags": ["Tailwind CSS", "Nuxt"],
-        "skills": [],
-        "image": "/assets/images/projects/7.gif",
-        "year": "2022",
-        "links": {
-          "preview": "https://github.com/viandwi24/foody-client",
-          "repository": "https://foody.viandwi24.site"
-        }
-      },
-      {
-        "name": "Link D Law",
-        "type": "Community & Law",
-        "description": "A apps to provide law information and AI-based to search a law depends some problem",
-        "tags": ["Bun", "Monorepo", "Microservices"],
-        "skills": [],
-        "image": "/assets/images/projects/18.png",
-        "year": "2023",
-        "links": {
-          "preview": "https://github.com/Nakama-Capstone/link-d-law",
-          "repository": "https://github.com/Nakama-Capstone/link-d-law"
-        }
-      },
-      {
-        "name": "BSOUL",
-        "type": "Game",
-        "description": "A simple rpg tile down pixel art.",
-        "tags": ["React", "Phaser"],
-        "skills": [],
-        "image": "/assets/images/projects/5.png",
-        "year": "2022",
-        "links": {
-          "preview": "https://github.com/viandwi24/bsoul",
-          "repository": "https://github.com/viandwi24/bsoul"
-        }
-      },
-      {
-        "name": "Github Profile Editor",
-        "type": "Tools",
-        "description": "a github profile editor with drag and drop!!!",
-        "tags": ["Tailwind CSS", "Nuxt"],
-        "skills": [],
-        "image": "/assets/images/projects/8.png",
-        "year": "2022",
-        "links": {
-          "preview": "https://github.com/viandwi24/github-profile-editor",
-          "repository": "https://github-profile-editor.vercel.app"
-        }
-      },
-      {
-        "name": "Vilacore",
-        "type": "Module",
-        "description": "Laravel 5.8 dengan konsep modular plugin.",
-        "tags": ["Laravel", "PHP"],
-        "skills": [],
-        "image": "/assets/images/projects/12.png",
-        "year": "2019",
-        "links": {
-          "preview": "https://github.com/viandwi24/vilacore",
-          "repository": "https://github.com/viandwi24/vilacore"
-        }
-      },
-      {
-        "name": "Animid",
-        "type": "Template",
-        "description": "Redesign MyAnimeList made by me",
-        "tags": ["Nuxt", "Tailwind CSS"],
-        "skills": [],
-        "image": "/assets/images/projects/14.png",
-        "year": "2020",
-        "links": {
-          "preview": "https://github.com/viandwi24/asteroid-guard-java",
-          "repository": "https://viandwi24.github.io/animid/"
-        }
-      },
-      {
-        "name": "Decognition",
-        "type": "Error Handler",
-        "description": "a Pretty Exception Handler for TypeScript Deno. Inspirated from Laravel & Flare Ignition.",
-        "tags": ["Deno", "Typescript"],
-        "skills": [],
-        "image": "/assets/images/projects/17.png",
-        "year": "2020",
-        "links": {
-          "preview": "https://github.com/viandwi24/decognition",
-          "repository": "https://github.com/viandwi24/decognition"
-        }
-      },
-      {
-        "name": "Denova",
-        "type": "Framework",
-        "description": "A Typescript Framework For Deno - Framework Looks Like Laravel",
-        "tags": ["Deno", "Typescript"],
-        "skills": [],
-        "image": "/assets/images/projects/21.png",
-        "year": "2020",
-        "links": {
-          "preview": "https://github.com/viandwi24/denova",
-          "repository": "https://github.com/viandwi24/denova"
-        }
-      },
-      {
-        "name": "Vifa Framework",
-        "type": "Framework",
-        "description": "Framework PHP Sederhana Yang Meringankan Perkerjaan Mu.",
-        "tags": ["PHP"],
-        "skills": [],
-        "image": "/assets/images/projects/20.png",
-        "year": "2018",
-        "links": {
-          "preview": "https://github.com/viandwi24/v-framework",
-          "repository": "https://github.com/viandwi24/v-framework"
-        }
-      },
-      {
-        "name": "Flappy Bird AI",
-        "type": "Machine Learning",
-        "description": "machine learning for self play flappy bird with neural network and evolution algorithm",
-        "tags": ["React", "Canvas"],
-        "skills": [],
-        "image": "/assets/images/projects/27.png",
-        "year": "2023",
-        "links": {
-          "preview": "https://github.com/viandwi24/flappy-bird-evolution-neural-network",
-          // "repository": null
-        }
-      },
-      {
-        "name": "Quot22",
-        "type": "Fun",
-        "description": "just fun website for a collection of quotes from our campus class",
-        "tags": ["Nuxt"],
-        "skills": [],
-        "image": "/assets/images/projects/26.png",
-        "year": "2023",
-        "links": {
-          "preview": "https://github.com/viandwi24/quot22",
-          // "repository": null
-        }
-      },
-      {
-        "name": "Karaoke-chan",
-        "type": "Simulator",
-        "description": "Simulation of Karaoke Machine",
-        "tags": ["React"],
-        "skills": [],
-        "image": "/assets/images/projects/13.gif",
-        "year": "2019",
-        "links": {
-          "preview": "https://github.com/viandwi24/karaoke-chan",
-          "repository": "https://github.com/viandwi24/karaoke-chan"
-        }
-      },
-      {
-        "name": "Pinned",
-        "type": "Tools",
-        "description": "Pin your ideas",
-        "tags": ["Flutter", "Dart"],
-        "skills": [],
-        "image": "/assets/images/projects/9.png",
-        "year": "2022",
-        "links": {
-          "preview": "https://github.com/viandwi24/pinned",
-          "repository": "https://github.com/viandwi24/pinned"
-        }
-      },
-      {
-        "name": "Aniline",
-        "type": "Tools",
-        "description": "A portal app for discovery and explorer movie and anime in the world.",
-        "tags": ["Flutter", "Dart"],
-        "skills": [],
-        "image": "/assets/images/projects/10.png",
-        "year": "2022",
-        "links": {
-          "preview": "https://github.com/viandwi24/aniline",
-          "repository": "https://github.com/viandwi24/aniline"
-        }
-      },
-      {
-        "name": "Solarium AR",
-        "type": "Augmented Reality",
-        "description": "a simple augmented reality app for solar system",
-        "tags": ["Flutter", "Dart", "Unity 3D", "Vuforia", "C#"],
-        "skills": [],
-        "image": "/assets/images/projects/11.png",
-        "year": "2022",
-        "links": {
-          "preview": "https://github.com/viandwi24/solarium-ar",
-          "repository": "https://github.com/viandwi24/solarium-ar"
-        }
-      },
-      {
-        "name": "Vimedic",
-        "type": "Health",
-        "description": "simple app Rekam medis pasien",
-        "tags": ["Laravel", "PHP"],
-        "skills": [],
-        "image": "/assets/images/projects/0.png",
-        "year": "2019",
-        "links": {
-          // "preview": null,
-          // "repository": null
-        }
-      },
-      {
-        "name": "QRObat",
-        "type": "Health",
-        "description": "simple recipe digital online with qr code",
-        "tags": ["Laravel", "PHP"],
-        "skills": [],
-        "image": "/assets/images/projects/0.png",
-        "year": "2019",
-        "links": {
-          "preview": null,
-          "repository": null
-        }
-      },
-      {
-        "name": "ESHIP",
-        "type": "Information",
-        "description": "public information for harbor in gresik, indonesia",
-        "tags": ["Laravel", "PHP"],
-        "skills": [],
-        "image": "/assets/images/projects/0.png",
-        "year": "2019",
-        "links": {
-          "preview": null,
-          "repository": null
-        }
-      },
-      {
-        "name": "Makhamr",
-        "type": "Information",
-        "description": "advanced search for kampus merdeka programs",
-        "tags": ["Nuxt"],
-        "skills": [],
-        "image": "/assets/images/projects/0.png",
-        "year": "2023",
-        "links": {
-          "preview": "https://github.com/viandwi24/makhamr",
-          // "repository": null
-        }
-      },
-      {
-        "name": "Paint IO",
-        "type": "Game",
-        "description": "try to clone online draw game like gartic.io",
-        "tags": ["Nuxt"],
-        "skills": [],
-        "image": "/assets/images/projects/0.png",
-        "year": "2023",
-        "links": {
-          "preview": "https://github.com/viandwi24/paint-io",
-          // "repository": null
-        }
-      },
-      {
-        "name": "ean13-tkinter-python",
-        "type": "Reader",
-        "description": "ean13 barcode reader with tkinter",
-        "tags": ["Python", "Tkinter"],
-        "skills": [],
-        "image": "/assets/images/projects/0.png",
-        "year": "2020",
-        "links": {
-          "preview": "https://github.com/viandwi24/ean13-tkinter-python",
-          "repository": "https://github.com/viandwi24/ean13-tkinter-python"
-        }
-      },
-      {
-        "name": "asteroid-guard-java",
-        "type": "Reader",
-        "description": "asteroid data gui from nasa api",
-        "tags": ["Java", "Maven"],
-        "skills": [],
-        "image": "/assets/images/projects/0.png",
-        "year": "2020",
-        "links": {
-          "preview": "https://github.com/viandwi24/asteroid-guard-java",
-          "repository": "https://github.com/viandwi24/asteroid-guard-java"
-        }
-      }
-    ] as PortofolioConfigProject[],
+    ] as PortfolioConfigProject[],
     skills: [
       {
         category: 'Programming Languages',
@@ -573,107 +161,33 @@ export const getPortofolioConfig = (key: string) => {
           ['PHP', 2017, 'https://www.vectorlogo.zone/logos/php/php-icon.svg'],
           ['Java', 2018, 'https://www.vectorlogo.zone/logos/java/java-icon.svg'],
           ['C++', 2018, 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/306px-ISO_C%2B%2B_Logo.svg.png'],
-          ['C#', 2018, 'https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png?20180210215736'],
+          ['C#', 2018, 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_C_sharp.svg'],
           ['Typescript', 2019, 'https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg'],
-          ['SASS', 2019, 'https://www.vectorlogo.zone/logos/sass-lang/sass-lang-icon.svg'],
+          ['Sass', 2024, 'https://www.vectorlogo.zone/logos/sass-lang/sass-lang-icon.svg'],
+          ['Scss', 2024, 'https://www.vectorlogo.zone/logos/sass-lang/sass-lang-icon.svg'],
           ['Python', 2019, 'https://www.vectorlogo.zone/logos/python/python-icon.svg'],
           ['Golang', 2022, 'https://www.vectorlogo.zone/logos/golang/golang-icon.svg'],
           ['Rust', 2023, 'https://www.vectorlogo.zone/logos/rust-lang/rust-lang-icon.svg'],
+          ['Dart', 2020, 'https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg'],
         ]
       },
-      {
-        category: 'Frameworks',
-        items: [
-          ['Codeigniter', 2017, 'https://codeigniter.com/assets/icons/44521256.png'],
-          ['Bootstrap', 2017, 'https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-icon.svg'],
-          ['JQuery', 2017, 'https://www.vectorlogo.zone/logos/jquery/jquery-icon.svg'],
-          ['Laravel', 2018, 'https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg'],
-          ['Unity', 2018, 'https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg'],
-          ['Semantic UI', 2018, 'https://seeklogo.com/images/S/semantic-ui-logo-AFDC4C7E31-seeklogo.com.png'],
-          ['Vue', 2019, 'https://www.vectorlogo.zone/logos/vuejs/vuejs-icon.svg'],
-          ['Nuxt', 2019, 'https://www.vectorlogo.zone/logos/nuxtjs/nuxtjs-icon.svg'],
-          ['Tailwind', 2019, 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg'],
-          ['Flutter', 2019, 'https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg'],
-          ['Phaser', 2020, 'https://www.vectorlogo.zone/logos/phaserio/phaserio-icon.svg'],
-          ['Flask', 2021, 'https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg'],
-          ['Express', 2021, 'https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg'],
-          ['React', 2021, 'https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg'],
-          ['GraphQL', 2021, 'https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg'],
-          ['Next', 2023, 'https://static-00.iconduck.com/assets.00/nextjs-icon-512x512-y563b8iq.png'],
-        ]
-      },
-      {
-        category: 'Tools & Runtime',
-        items: [
-          ['Nodejs', 2019, 'https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg'],
-          ['Deno', 2020, 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Deno_2021.svg/512px-Deno_2021.svg.png'],
-          ['Bun', 2023, 'https://bun.sh/logo.svg'],
-        ]
-      },
-      {
-        category: 'DevOps',
-        items: [
-          ['Docker', 2020, 'https://www.vectorlogo.zone/logos/docker/docker-icon.svg'],
-          ['PM2', 2020, 'https://www.vectorlogo.zone/logos/pm2io/pm2io-icon.svg'],
-          ['GAction', 2021, 'https://www.vectorlogo.zone/logos/github/github-icon.svg'],
-          ['Kubernetes', 2023, 'https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg'],
-          ['Terraform', 2023, 'https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg'],
-          ['Jenkins', 2024, 'https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg'],
-        ]
-      },
-      {
-        category: 'Database',
-        items: [
-          ['Mysql', 2017, 'https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg'],
-          ['Postgresql', 2018, 'https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg'],
-          ['Firebase', 2019, 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg'],
-          ['Mongodb', 2020, 'https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg'],
-          ['Redis', 2020, 'https://www.vectorlogo.zone/logos/redis/redis-icon.svg'],
-          ['Sqlite', 2021, 'https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg'],
-        ]
-      },
-      {
-        category: 'Cloud',
-        items: [
-          ['AWS', 2020, 'https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg'],
-          ['GCP', 2021, 'https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg'],
-        ]
-      },
-      {
-        category: 'Serverless',
-        items: [
-          ['Heroku', 2019, 'https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg'],
-          ['Netlify', 2019, 'https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg'],
-          ['Vercel', 2020, 'https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg'],
-          ['Dokploy', 2024, 'https://avatars.githubusercontent.com/u/156882017?s=200&v=4']
-        ]
-      },
-      {
-        category: 'Operating System',
-        items: [
-          ['Windows', 2010, 'https://www.vectorlogo.zone/logos/microsoft/microsoft-icon.svg'],
-          ['Ubuntu', 2017, 'https://www.vectorlogo.zone/logos/ubuntu/ubuntu-icon.svg'],
-          ['Debian', 2018, 'https://www.vectorlogo.zone/logos/debian/debian-icon.svg'],
-          ['CentOS', 2020, 'https://www.vectorlogo.zone/logos/centos/centos-icon.svg'],
-          ['MacOS', 2020, 'https://www.vectorlogo.zone/logos/apple/apple-icon.svg'],
-        ]
-      },
-    ] as PortofolioConfigSkills[]
+    ]
   }
+  const AppPortfolioConfig = merge(DefaultPortfolioConfig, {...$config.portfolio})
 
   try {
     // key is dot notation object, like: author.links.github or author.friends[0].name
-    let value: any = key.split('.').reduce((acc, cur) => (acc as any)[cur], AppPortofolioConfig)
+    let value: any = key.split('.').reduce((acc, cur) => (acc as any)[cur], AppPortfolioConfig)
     if (value === undefined) return key
     // funcs
     const getFromString = (str: string) => {
       try {
         const templateString = str.match(/{{(.*?)}}/g)
         if (templateString) {
-          // replace all template string pattern with str from AppPortofolioConfig
+          // replace all template string pattern with str from AppPortfolioConfig
           templateString.forEach((_str) => {
             const key = _str.replace(/[{}]/g, '')
-            str = str.replace(_str, getPortofolioConfig(key))
+            str = str.replace(_str, getPortfolioConfig(key))
           })
         }
         return str
@@ -714,7 +228,7 @@ export const getPortofolioConfig = (key: string) => {
     }
     return value
   } catch (error) {
-    console.warn(`Key: ${key} not found in AppPortofolioConfig: ${error}`)
+    console.warn(`Key: ${key} not found in AppPortfolioConfig: ${error}`)
     return key
   }
 }

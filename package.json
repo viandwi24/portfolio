@@ -13,6 +13,8 @@
     "@nuxt/image": "1.9.0",
     "@nuxt/ui": "3.0.0-alpha.10",
     "@splinetool/runtime": "^1.9.59",
+    "@types/lodash.merge": "^4.6.9",
+    "lodash.merge": "^4.6.2",
     "nuxt": "3.15.1",
     "v-gsap-nuxt": "1.3.3",
     "vue": "latest",
