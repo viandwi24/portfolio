@@ -124,14 +124,60 @@ export const getPortfolioConfig = (key: string) => {
             color: 'error',
           },
         ]
-      }
+      },
+      about: {
+        buttons: [
+          {
+            label: 'Github',
+            variant: 'soft',
+            size: 'xl',
+            icon: 'ph:github-logo',
+            href: '{{author.links.github}}',
+            target: "_blank",
+            color: 'neutral',
+          },
+          {
+            label: 'Resume',
+            variant: 'soft',
+            size: 'xl',
+            icon: 'ph:file-text-duotone',
+            href: 'https://drive.google',
+            target: "_blank",
+            color: 'warning',
+          },
+          {
+            label: 'Contact Me',
+            variant: 'soft',
+            size: 'xl',
+            'trailing-icon': 'ph:arrow-right-duotone',
+            to: '/contact',
+          }
+        ],
+      },
     },
     seo: {
-      home: {
+      default: {
         title: '{{author.name}} ({{author.username}})',
+        description: '{{section.home.subtitle.main}}, {{section.home.subtitle.secondary}}',
+        titleTemplate: `%s | {{author.name}}`,
+      },
+      home: {
+        titleTemplate: '',
+      },
+      about: {
+        title: 'About',
+      },
+      blog: {
+        title: 'Blog',
+      },
+      contact: {
+        title: 'Contact',
+      },
+      experiences: {
+        title: 'Experiences',
       },
       projects: {
-        title: 'Projects - {{author.name}}',
+        title: 'Projects',
       },
     },
     projects: [
@@ -225,7 +271,11 @@ export const getPortfolioConfig = (key: string) => {
     } else if (Array.isArray(value)) {
       // check if value is array, or nested array, looping through array all depth
       value = recursiveCheckArrayOrObject(value)
+    } else if (typeof value === 'object') {
+      // check if value is object, or nested object, looping through object all depth
+      value = recursiveCheckArrayOrObject(value)
     }
+    // console.log(`Key: ${key}`, value)
     return value
   } catch (error) {
     console.warn(`Key: ${key} not found in AppPortfolioConfig: ${error}`)

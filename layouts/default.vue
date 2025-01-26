@@ -3,6 +3,7 @@ const route = useRoute()
 
 const navMenus: [string, string][] = [
   ['Home', '/'],
+  ['About', '/about'],
   ['Projects', '/projects'],
   ['Experiences', '/experiences'],
   ['Blog', '/blog'],
@@ -14,7 +15,7 @@ const checkRouteActive = (item: [string, string]) => {
 
 <template>
   <div>
-    <header class="sticky top-0 left-0 h-16 w-full bg-neutral-800/70 border-b border-neutral-500/30 animate-header-fade-in z-50 shadow-lg backdrop-blur-lg">
+    <header class="sticky top-0 left-0 h-16 w-full bg-neutral-900/70 border-b border-neutral-500/30 animate-header-fade-in z-50 shadow-lg backdrop-blur-lg">
       <Container class="flex items-center justify-between h-full relative">
         <div class="flex items-center w-[500px]">
           <NuxtLink to="/" class="text-3xl font-bold text-white">
@@ -32,6 +33,7 @@ const checkRouteActive = (item: [string, string]) => {
               class="font-semibold font-mono"
               :variant="checkRouteActive(item) ? 'soft' : 'ghost'"
               :to="item[1]"
+              size="md"
             >
               <span class="text-primary-500">0{{ i + 1 }}.// </span>
               <span class="text-gray-200">{{ item[0] }}</span>
@@ -107,7 +109,7 @@ const checkRouteActive = (item: [string, string]) => {
 }
 
 .animate-fade-out {
-  animation: shrinkFadeOut 1s ease-out 1.1s forwards;
+  animation: shrinkFadeOut 1s ease-out 1.6s forwards;
 }
 
 .animate-header-fade-in {

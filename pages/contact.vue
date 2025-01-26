@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+useSeoMeta(parseSeo('contact'))
+</script>
+
 <template>
   <Container class="min-h-[calc(100vh-4rem)] flex flex-col pb-[4rem]">
     <div class="flex-1 flex flex-col justify-center items-center w-full sm:max-w-screen-sm lg:max-w-screen-lg mx-auto px-4 mb-4 py-10">

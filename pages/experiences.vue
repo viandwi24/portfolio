@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-useSeoMeta({
-  title: getPortfolioConfig('seo.projects.title'),
-})
+useSeoMeta(parseSeo('experiences'))
 
 const skills: PortfolioConfigSkills[] = getPortfolioConfig('skills')
 const skillsSearch = ref('')
@@ -25,7 +23,7 @@ const skillsFiltered = computed(() => {
       </p>
     </div>
 
-    <div class="mt-6 h-0.5 bg-neutral-500/30" />
+    <!-- <div class="mt-6 h-0.5 bg-neutral-500/30" /> -->
 
     <div class="mt-8">
       <div>

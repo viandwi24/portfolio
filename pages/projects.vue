@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-useSeoMeta({
-  title: getPortfolioConfig('seo.projects.title'),
-})
+useSeoMeta(parseSeo('projects'))
 
 const projects: PortfolioConfigProject[] = getPortfolioConfig('projects')
 
@@ -14,7 +12,6 @@ const getAvailableSkillFromTags = (project: PortfolioConfigProject) => {
       for (const s of skill.items) {
         if (s[0].toLocaleLowerCase() == tag.toLocaleLowerCase()) {
           tags.push(s)
-          console.log('skill', s)
         }
       }
     }
@@ -37,23 +34,45 @@ const projectsSearch = ref('')
 const projectsFiltered = computed(() => {
   const ps: PortfolioConfigProject[] = []
   if (!projectsSearch.value || projectsSearch.value.trim() == '') return projects
+  
+  const relevanceMap = new Map<string, { project: PortfolioConfigProject; count: number }>();
   for (const project of projects) {
-    // check title if match
+    let matchCount = 0;
+
+    // Check title if match
     if (project.name.toLocaleLowerCase().includes(projectsSearch.value.toLocaleLowerCase())) {
-      ps.push(project)
+      matchCount++;
     }
-    // check tags if match
+
+    // Check tags if match
     for (const tag of project.tags) {
       if (tag.toLocaleLowerCase().includes(projectsSearch.value.toLocaleLowerCase())) {
-        ps.push(project)
+        matchCount++;
       }
     }
-    // check description if match
+
+    // Check description if match
     if (project.description.toLocaleLowerCase().includes(projectsSearch.value.toLocaleLowerCase())) {
-      ps.push(project)
+      matchCount++;
+    }
+
+    // Update relevance map if there are matches
+    if (matchCount > 0) {
+      if (!relevanceMap.has(project.name)) {
+        relevanceMap.set(project.name, { project, count: 0 });
+      }
+      relevanceMap.get(project.name)!.count += matchCount;
     }
   }
-  return ps
+
+  // Sort and prepare the final result
+  ps.push(
+    ...Array.from(relevanceMap.values())
+      .sort((a, b) => b.count - a.count) // Sort by relevance count (descending)
+      .map((entry) => entry.project)    // Extract only the project
+  );
+
+  return ps;
 })
 </script>
 
@@ -79,7 +98,7 @@ const projectsFiltered = computed(() => {
     <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <div
         v-for="(project, i) in projectsFiltered"
-        :key="i"
+        :key="project.name"
         class="bg-neutral-500/10 rounded-xl overflow-hidden border border-neutral-500/50 flex flex-col relative"
       >
         <!-- efek pantulan atas ke air bawah, jadi rotate lalu inverse horizontal -->

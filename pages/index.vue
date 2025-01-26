@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-useSeoMeta({
-  title: getPortfolioConfig('seo.home.title'),
-})
+useSeoMeta(parseSeo('home'))
 </script>
 
 <template>

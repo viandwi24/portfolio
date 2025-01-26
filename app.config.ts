@@ -124,11 +124,28 @@ export default defineAppConfig({
       }
     },
     seo: {
-      home: {
+      default: {
         title: '{{author.name}} ({{author.username}})',
+        description: '{{section.home.subtitle.main}}, {{section.home.subtitle.secondary}}',
+        titleTemplate: `%s | {{author.name}}`,
+      },
+      home: {
+        titleTemplate: '',
+      },
+      about: {
+        title: 'About',
+      },
+      blog: {
+        title: 'Blog',
+      },
+      contact: {
+        title: 'Contact',
+      },
+      experiences: {
+        title: 'Experiences',
       },
       projects: {
-        title: 'Projects - {{author.name}}',
+        title: 'Projects',
       },
     },
     projects: [
