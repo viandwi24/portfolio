@@ -158,8 +158,44 @@ export default defineAppConfig({
         "image": "/assets/images/projects/1.png",
         "year": "2022",
         "links": {
-          "preview": "https://github.com/viandwi24/nuxt3-awesome-starter",
-          "repository": "https://nuxt3-awesome-starter.vercel.app"
+          "repository": "https://github.com/viandwi24/nuxt3-awesome-starter",
+          "preview": "https://nuxt3-awesome-starter.vercel.app"
+        }
+      },
+      {
+        "name": "Chainkit Builder",
+        "type": "Game Services",
+        "description": "a Gundam Builder Like game but for Nokiamon Ecosystem in Solana Blockchain",
+        "tags": ["Bun", "Typescript", "Next", "React", "Tailwindcss", "Solana"],
+        "skills": [],
+        "image": "/assets/images/projects/28.png",
+        "year": "2022",
+        "links": {
+          "preview": "https://chainkitbuilder.com"
+        }
+      },
+      {
+        "name": "DibantuAI",
+        "type": "Chatbot",
+        "description": "a end user chat with many all in one ai models in one platform",
+        "tags": ["Bun", "Typescript", "Nuxt", "Vue", "Tailwindcss"],
+        "skills": [],
+        "image": "/assets/images/projects/29.png",
+        "year": "2022",
+        "links": {
+          "preview": "https://dibantuai.com"
+        }
+      },
+      {
+        "name": "Nakacita",
+        "type": "Landing Pages",
+        "description": "a landing pages for Nakama Cita Karya company",
+        "tags": ["Bun", "Typescript", "Nuxt", "Vue", "Tailwindcss"],
+        "skills": [],
+        "image": "/assets/images/projects/30.png",
+        "year": "2022",
+        "links": {
+          "preview": "https://nakacita.com"
         }
       },
       {
@@ -171,8 +207,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/2.gif",
         "year": "2021",
         "links": {
-          "preview": "https://github.com/viandwi24/blockchain-simulation",
-          "repository": "https://viandwi24.github.io/blockchain-simulation"
+          "repository": "https://github.com/viandwi24/blockchain-simulation",
+          "preview": "https://viandwi24.github.io/blockchain-simulation"
         }
       },
       {
@@ -184,8 +220,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/3.gif",
         "year": "2020",
         "links": {
-          "preview": "https://github.com/devoverid/forum",
-          "repository": "https://github.com/devoverid/forum"
+          "repository": "https://github.com/devoverid/forum",
+          "preview": "https://github.com/devoverid/forum"
         }
       },
       {
@@ -197,8 +233,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/4.png",
         "year": "2021",
         "links": {
-          "preview": "https://github.com/viandwi24/klasse-io-client",
-          "repository": "https://github.com/viandwi24/klasse-io-client"
+          "repository": "https://github.com/viandwi24/klasse-io-client",
+          "preview": "https://github.com/viandwi24/klasse-io-client"
         }
       },
       {
@@ -210,8 +246,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/16.png",
         "year": "2019",
         "links": {
-          "preview": "https://nokiamon.com/",
-          "repository": "https://nokiamon.com/"
+          "repository": "https://nokiamon.com/",
+          "preview": "https://nokiamon.com/"
         }
       },
       {
@@ -223,8 +259,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/23.jpeg",
         "year": "2024",
         "links": {
-          "preview": null,
-          "repository": null
+          "repository": null,
+          "preview": null
         }
       },
       {
@@ -236,8 +272,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/25.jpeg",
         "year": "2023",
         "links": {
-          "preview": null,
-          "repository": null
+          "repository": null,
+          "preview": null
         }
       },
       {
@@ -249,8 +285,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/24.png",
         "year": "2024",
         "links": {
-          "preview": "https://github.com/viandwi24/nuxt3-blog-Solana-solana",
-          "repository": "https://nuxt3-blog-Solana-solana-client.vercel.app"
+          "repository": "https://github.com/viandwi24/nuxt3-blog-Solana-solana",
+          "preview": "https://nuxt3-blog-Solana-solana-client.vercel.app"
         }
       },
       {
@@ -262,8 +298,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/15.png",
         "year": "2019",
         "links": {
-          "preview": null,
-          "repository": null
+          "repository": null,
+          "preview": null
         }
       },
       {
@@ -275,8 +311,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/22.png",
         "year": "2024",
         "links": {
-          "preview": null,
-          "repository": null
+          "repository": null,
+          "preview": null
         }
       },
       {
@@ -297,8 +333,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/6.gif",
         "year": "2021",
         "links": {
-          "preview": "https://github.com/viandwi24/bootsarc",
-          "repository": "https://bootsarc.vercel.app/pages/index.html"
+          "repository": "https://github.com/viandwi24/bootsarc",
+          "preview": "https://bootsarc.vercel.app/pages/index.html"
         }
       },
       {
@@ -310,8 +346,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/7.gif",
         "year": "2022",
         "links": {
-          "preview": "https://github.com/viandwi24/foody-client",
-          "repository": "https://foody.viandwi24.site"
+          "repository": "https://github.com/viandwi24/foody-client",
+          "preview": "https://foody.viandwi24.site"
         }
       },
       {
@@ -323,8 +359,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/18.png",
         "year": "2023",
         "links": {
-          "preview": "https://github.com/Nakama-Capstone/link-d-law",
-          "repository": "https://github.com/Nakama-Capstone/link-d-law"
+          "repository": "https://github.com/Nakama-Capstone/link-d-law",
+          "preview": "https://github.com/Nakama-Capstone/link-d-law"
         }
       },
       {
@@ -336,8 +372,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/5.png",
         "year": "2022",
         "links": {
-          "preview": "https://github.com/viandwi24/bsoul",
-          "repository": "https://github.com/viandwi24/bsoul"
+          "repository": "https://github.com/viandwi24/bsoul",
+          "preview": "https://github.com/viandwi24/bsoul"
         }
       },
       {
@@ -349,8 +385,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/8.png",
         "year": "2022",
         "links": {
-          "preview": "https://github.com/viandwi24/github-profile-editor",
-          "repository": "https://github-profile-editor.vercel.app"
+          "repository": "https://github.com/viandwi24/github-profile-editor",
+          "preview": "https://github-profile-editor.vercel.app"
         }
       },
       {
@@ -362,8 +398,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/12.png",
         "year": "2019",
         "links": {
-          "preview": "https://github.com/viandwi24/vilacore",
-          "repository": "https://github.com/viandwi24/vilacore"
+          "repository": "https://github.com/viandwi24/vilacore",
+          "preview": "https://github.com/viandwi24/vilacore"
         }
       },
       {
@@ -375,8 +411,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/14.png",
         "year": "2020",
         "links": {
-          "preview": "https://github.com/viandwi24/asteroid-guard-java",
-          "repository": "https://viandwi24.github.io/animid/"
+          "repository": "https://github.com/viandwi24/asteroid-guard-java",
+          "preview": "https://viandwi24.github.io/animid/"
         }
       },
       {
@@ -388,8 +424,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/17.png",
         "year": "2020",
         "links": {
-          "preview": "https://github.com/viandwi24/decognition",
-          "repository": "https://github.com/viandwi24/decognition"
+          "repository": "https://github.com/viandwi24/decognition",
+          "preview": "https://github.com/viandwi24/decognition"
         }
       },
       {
@@ -401,8 +437,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/21.png",
         "year": "2020",
         "links": {
-          "preview": "https://github.com/viandwi24/denova",
-          "repository": "https://github.com/viandwi24/denova"
+          "repository": "https://github.com/viandwi24/denova",
+          "preview": "https://github.com/viandwi24/denova"
         }
       },
       {
@@ -414,8 +450,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/20.png",
         "year": "2018",
         "links": {
-          "preview": "https://github.com/viandwi24/v-framework",
-          "repository": "https://github.com/viandwi24/v-framework"
+          "repository": "https://github.com/viandwi24/v-framework",
+          "preview": "https://github.com/viandwi24/v-framework"
         }
       },
       {
@@ -427,8 +463,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/27.png",
         "year": "2023",
         "links": {
-          "preview": "https://github.com/viandwi24/flappy-bird-evolution-neural-network",
-          // "repository": null
+          "repository": "https://github.com/viandwi24/flappy-bird-evolution-neural-network",
+          // "preview": null
         }
       },
       {
@@ -440,8 +476,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/26.png",
         "year": "2023",
         "links": {
-          "preview": "https://github.com/viandwi24/quot22",
-          // "repository": null
+          "repository": "https://github.com/viandwi24/quot22",
+          // "preview": null
         }
       },
       {
@@ -453,8 +489,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/13.gif",
         "year": "2019",
         "links": {
-          "preview": "https://github.com/viandwi24/karaoke-chan",
-          "repository": "https://github.com/viandwi24/karaoke-chan"
+          "repository": "https://github.com/viandwi24/karaoke-chan",
+          "preview": "https://github.com/viandwi24/karaoke-chan"
         }
       },
       {
@@ -466,8 +502,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/9.png",
         "year": "2022",
         "links": {
-          "preview": "https://github.com/viandwi24/pinned",
-          "repository": "https://github.com/viandwi24/pinned"
+          "repository": "https://github.com/viandwi24/pinned",
+          "preview": "https://github.com/viandwi24/pinned"
         }
       },
       {
@@ -479,8 +515,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/10.png",
         "year": "2022",
         "links": {
-          "preview": "https://github.com/viandwi24/aniline",
-          "repository": "https://github.com/viandwi24/aniline"
+          "repository": "https://github.com/viandwi24/aniline",
+          "preview": "https://github.com/viandwi24/aniline"
         }
       },
       {
@@ -492,8 +528,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/11.png",
         "year": "2022",
         "links": {
-          "preview": "https://github.com/viandwi24/solarium-ar",
-          "repository": "https://github.com/viandwi24/solarium-ar"
+          "repository": "https://github.com/viandwi24/solarium-ar",
+          "preview": "https://github.com/viandwi24/solarium-ar"
         }
       },
       {
@@ -505,8 +541,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/0.png",
         "year": "2019",
         "links": {
-          // "preview": null,
-          // "repository": null
+          // "repository": null,
+          // "preview": null
         }
       },
       {
@@ -518,8 +554,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/0.png",
         "year": "2019",
         "links": {
-          "preview": null,
-          "repository": null
+          "repository": null,
+          "preview": null
         }
       },
       {
@@ -531,8 +567,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/0.png",
         "year": "2019",
         "links": {
-          "preview": null,
-          "repository": null
+          "repository": null,
+          "preview": null
         }
       },
       {
@@ -544,8 +580,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/0.png",
         "year": "2023",
         "links": {
-          "preview": "https://github.com/viandwi24/makhamr",
-          // "repository": null
+          "repository": "https://github.com/viandwi24/makhamr",
+          // "preview": null
         }
       },
       {
@@ -557,8 +593,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/0.png",
         "year": "2023",
         "links": {
-          "preview": "https://github.com/viandwi24/paint-io",
-          // "repository": null
+          "repository": "https://github.com/viandwi24/paint-io",
+          // "preview": null
         }
       },
       {
@@ -570,8 +606,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/0.png",
         "year": "2020",
         "links": {
-          "preview": "https://github.com/viandwi24/ean13-tkinter-python",
-          "repository": "https://github.com/viandwi24/ean13-tkinter-python"
+          "repository": "https://github.com/viandwi24/ean13-tkinter-python",
+          "preview": "https://github.com/viandwi24/ean13-tkinter-python"
         }
       },
       {
@@ -583,8 +619,8 @@ export default defineAppConfig({
         "image": "/assets/images/projects/0.png",
         "year": "2020",
         "links": {
-          "preview": "https://github.com/viandwi24/asteroid-guard-java",
-          "repository": "https://github.com/viandwi24/asteroid-guard-java"
+          "repository": "https://github.com/viandwi24/asteroid-guard-java",
+          "preview": "https://github.com/viandwi24/asteroid-guard-java"
         }
       }
     ] as PortfolioConfigProject[],

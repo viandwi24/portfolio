@@ -126,7 +126,8 @@ const projectsFiltered = computed(() => {
               height: '100%',
               width: '100%',
               objectFit: 'cover',
-              objectPosition: 'center',
+              // top center
+              objectPosition: 'top',
             }"
             loading="lazy"
             decoding="async"
