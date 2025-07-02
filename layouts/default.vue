@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 const route = useRoute()
 
-const navMenus: [string, string][] = [
+const navMenus = computed<[string, string][]>(() => ([
   ['Home', '/'],
   ['About', '/about'],
   ['Projects', '/projects'],
   ['Experiences', '/experiences'],
   ['Blog', '/blog'],
-]
+]))
 const checkRouteActive = (item: [string, string]) => {
   return route.path === item[1]
 }
@@ -19,10 +19,7 @@ const checkRouteActive = (item: [string, string]) => {
       <Container class="flex items-center justify-between h-full relative">
         <div class="flex items-center w-[500px]">
           <NuxtLink to="/" class="text-3xl font-bold text-white">
-            <span>{{ getPortfolioConfig('layout.navbar.brand.main') }}</span>
-            <span class="iandwi animate-fade-out">{{ getPortfolioConfig('layout.navbar.brand.secondary') }}</span>
-            <span class="text-primary-500">{{ getPortfolioConfig('layout.navbar.brand.tertiary') }}</span>
-            <span class="ml-1 inline-block w-1.5 h-1.5 bg-gray-400" />
+            <Brand />
           </NuxtLink>
         </div>
         <div class="flex-1 flex items-center justify-center">
@@ -66,21 +63,6 @@ const checkRouteActive = (item: [string, string]) => {
 </template>
 
 <style scoped>
-@keyframes shrinkFadeOut {
-  0% {
-    display: inline-block;
-    letter-spacing: 0;
-    opacity: 1;
-  }
-
-  100% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-    display: none;
-    margin-left: -4px;
-  }
-}
-
 @keyframes HeaderFadeInFromTopToBottom {
   0% {
     transform: translateY(-100%);
@@ -106,10 +88,6 @@ const checkRouteActive = (item: [string, string]) => {
   100% {
     width: 100%;
   }
-}
-
-.animate-fade-out {
-  animation: shrinkFadeOut 1s ease-out 1.6s forwards;
 }
 
 .animate-header-fade-in {
